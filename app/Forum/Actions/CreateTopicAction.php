@@ -3,7 +3,7 @@
 namespace App\Forum\Actions;
 
 use Illuminate\Http\Request;
-use App\Forum\Responders\CreateTopicResponders;
+use App\Forum\Responders\CreateTopicResponder;
 use App\Forum\Domain\Services\CreateTopicService;
 
 class CreateTopicAction
@@ -12,7 +12,7 @@ class CreateTopicAction
 
     protected $responder;
 
-    public function __construct(CreateTopicService $service,  CreateTopicResponders $responder)
+    public function __construct(CreateTopicService $service,  CreateTopicResponder $responder)
     {
         $this->service = $service;
         $this->responder = $responder;
@@ -22,6 +22,6 @@ class CreateTopicAction
     {
         $topic = $this->service->handle($request->only('title', 'body'));
 
-        return $this->responder->respond($topic);
+        return $this->responder->withResponse($topic)->respond();
     }
 }
