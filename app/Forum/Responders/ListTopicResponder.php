@@ -5,7 +5,7 @@ namespace App\Forum\Responders;
 use App\Common\Responders\Responder;
 use App\Common\Responders\ResponderInterface;
 
-class CreateTopicResponder extends Responder implements ResponderInterface
+class ListTopicResponder extends Responder implements ResponderInterface
 {
     public function respond()
     {

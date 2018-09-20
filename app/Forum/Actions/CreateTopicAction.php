@@ -12,7 +12,7 @@ class CreateTopicAction
 
     protected $responder;
 
-    public function __construct(CreateTopicService $service,  CreateTopicResponder $responder)
+    public function __construct(CreateTopicService $service, CreateTopicResponder $responder)
     {
         $this->service = $service;
         $this->responder = $responder;
